@@ -1,22 +1,27 @@
+import { useNavigation } from '@react-navigation/native';
 import React,{useState} from 'react';
 import {
   SafeAreaView,
   View,
   Text,
   TextInput,
+  Button,
 } from 'react-native';
 
 import { stylesInput } from '../styles'; 
 
 export const LandingPage = () => {
 
-    const [textName,setNameText] = useState('')
+   
+    const navigation = useNavigation();
+
+    const [textName,setTextName] = useState('')
     const textUpdate = (text) => {
-        setNameText(text)
+        setTextName(text)
     }
-   const [textAge,setNameAge] = useState('')
-   const textUpdateAge = (textAge) => {
-        setNameAge(textAge)
+   const [textAge,setAgeText] = useState('')
+   const textUpdateAge = (text) => {
+     setAgeText(text)
     }
     return(
         <SafeAreaView style = {stylesInput.mainContainer}>
@@ -31,14 +36,26 @@ export const LandingPage = () => {
                  />
                 <Text style = {stylesInput.title}>Age: {textAge}</Text>
                     <TextInput
-                           style={stylesInput.inputAge}
+                           style={stylesInput.input}
                            onChangeText={textUpdateAge}
                            value={textAge}
                            keyboardType="numeric"
-             />
+                    />
+
+            <Button
+            onPress={() => navigation.navigate('Second Page',{
+                name:textName,
+                age:textAge,
+            })}
+            title="Learn More"
+           
+            />
+
              <Text style = {stylesInput.footer}>Pos Digicert Sdn Bhd</Text>
+
+            
          </View>
         </SafeAreaView>
-        
+
     )
 }
