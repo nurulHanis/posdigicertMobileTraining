@@ -1,2 +1,2 @@
-export {formInputStyle} from './formInputStyle';
+export {stylesInput} from './formInputStyle';
 export {textInputStyle} from './textInputStyle';
