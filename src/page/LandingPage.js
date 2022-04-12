@@ -4,43 +4,39 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
 } from 'react-native';
 
-import { stylesInput } from '../styles/formInputStyle'; 
+import { formInputStyle,textInputStyle } from '../styles'; 
 
 export const LandingPage = () => {
 
     const [textName,setNameText] = useState('')
     const textUpdate = (text) => {
-
         setNameText(text)
     }
    const [textAge,setNameAge] = useState('')
    const textUpdateAge = (textAge) => {
-        console.log('Age : ', textAge)
-
         setNameAge(textAge)
     }
     return(
-        <SafeAreaView style = {stylesInput.mainContainer}>
-         <View style={stylesInput.container}>
-            <Text style = {stylesInput.titleText}>Welcome to</Text>
-            <Text style = {stylesInput.titleText}>Awesome Training {"\n"}{"\n"}</Text>
-            <Text style = {stylesInput.title}>Name: {textName}</Text>
+        <SafeAreaView style = {formInputStyle.mainContainer}>
+         <View style={formInputStyle.container}>
+            <Text style = {textInputStyle.titleText}>Welcome to</Text>
+            <Text style = {textInputStyle.titleText}>Awesome Training {"\n"}{"\n"}</Text>
+            <Text style = {textInputStyle.title}>Name: {textName}</Text>
                 <TextInput
-                       style={stylesInput.input}
+                       style={textInputStyle.input}
                        onChangeText={textUpdate}
                        value={textName}
                  />
-                <Text style = {stylesInput.title}>Age: {textAge}</Text>
+                <Text style = {textInputStyle.title}>Age: {textAge}</Text>
                     <TextInput
-                           style={stylesInput.inputAge}
+                           style={textInputStyle.inputAge}
                            onChangeText={textUpdateAge}
                            value={textAge}
                            keyboardType="numeric"
              />
-             <Text style = {stylesInput.footer}>Pos Digicert Sdn Bhd</Text>
+             <Text style = {textInputStyle.footer}>Pos Digicert Sdn Bhd</Text>
          </View>
         </SafeAreaView>
     )

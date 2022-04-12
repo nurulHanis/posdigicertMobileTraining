@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+
 import {
   StyleSheet,
 } from 'react-native';
@@ -16,7 +16,6 @@ export const stylesInput = StyleSheet.create({
     title:{
         fontSize: 20,
         color: 'black',
-
     },
     titleText: {
       fontSize: 30,
@@ -30,13 +29,6 @@ export const stylesInput = StyleSheet.create({
        borderWidth: 1,
        padding: 10,
      },
-    inputAge: {
-        height: 40,
-        margin: 10,
-        borderWidth: 1,
-        padding: 10,
-        width:50,
-      },
       footer: {
         fontSize: 30,
         position: 'absolute',
