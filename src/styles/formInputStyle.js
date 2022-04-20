@@ -48,5 +48,11 @@ export const stylesInput = StyleSheet.create({
       alignItems:'center',
       padding:10
 
-    }
+    },
+    activityIndicator: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 80
+   }
 });
