@@ -15,9 +15,9 @@ export const NextPage = () => {
   const {name,age} = route.params;
 
     return(
-        <View style={{margin:100,padding:30}}>
-            <Text style = {stylesInput.titleText}> hi, your name is {name}   </Text>
-            <Text style = {stylesInput.titleText}> Ypu are {age}   </Text>
+        <View style={{margin:10,padding:10}}>
+            <Text style = {stylesInput.titleText}> Hi, your name is {name}   </Text>
+            <Text style = {stylesInput.titleText}> You are {age}   </Text>
         </View>
         
     )

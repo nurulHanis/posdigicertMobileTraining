@@ -18,10 +18,9 @@ export const stylesInput = StyleSheet.create({
         color: 'black',
     },
     titleText: {
-      fontSize: 30,
-      fontWeight: "bold",
+      fontSize: 20,
       color: 'black',
-      textAlign:'center',
+      textAlign: 'center',
     },
     input: {
        height: 40,
@@ -29,19 +28,25 @@ export const stylesInput = StyleSheet.create({
        borderWidth: 1,
        padding: 10,
      },
-      footer: {
-        fontSize: 30,
-        position: 'absolute',
-        flex:0.1,
-        left: 0,
-        right: 0,
-        bottom: -10,
-        backgroundColor:'red',
-        height:80,
-        alignItems:'center',
-        fontSize: 20,
-        fontWeight: "bold",
-        color: 'black',
-        textAlign:'center',
-      },
+    footer: {
+      fontSize: 30,
+      position: 'absolute',
+      flex:0.1,
+      left: 0,
+      right: 0,
+      bottom: -10,
+      backgroundColor:'red',
+      height:80,
+      alignItems:'center',
+      fontSize: 20,
+      fontWeight: "bold",
+      color: 'black',
+      textAlign:'center',
+    },
+    addListBtn:{
+      backgroundColor : '#FFFFFF',
+      alignItems:'center',
+      padding:10
+
+    }
 });
