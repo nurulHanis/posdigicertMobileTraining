@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {View,Text,TextInput,TouchableOpacity,ActivityIndicator } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux'
 import { stylesInput } from '../../styles'; 
+import { setEnglish } from "../../redux/settingSlice";
+import { setBahasa } from "../../redux/settingSlice";
 
 
 export const AddItem = () => {
 
+    const count = useSelector(state => state.settingSlice)
+    const dispatch = useDispatch()
+    const lang = count.language
+
+     console.log("Value : ", lang);
     const [isLoading,setLoading] = useState(false);
 
     const [addForm,setAddForm] = useState({
@@ -60,7 +68,7 @@ export const AddItem = () => {
             ])
         });
     }
-
+    
     return (       
         isLoading ?
         <View style={stylesInput.activityIndicator}>
@@ -70,7 +78,7 @@ export const AddItem = () => {
         </View>
         :
         <View style={stylesInput.container}>
-            <Text>First Name</Text>
+            <Text>{lang.first_name}</Text>
             <TextInput
                 style={stylesInput.input}
                 onChangeText={value => updateFromInput(value,'first_name')}
@@ -84,15 +92,20 @@ export const AddItem = () => {
                 value={addForm.last_name}
                 placeHolder="Enter Your Last Name :"
             />
+            <Text>Emel</Text>
             <TextInput
                 style={stylesInput.input}
                 onChangeText={value => updateFromInput(value,'email_value')}
                 value={addForm.email_value}
                 placeHolder="Enter Your Email :"
             />
-            <TouchableOpacity style={stylesInput.addListBtn} onPress={addItemApi} >
-                <Text>Add item</Text>
+            <TouchableOpacity style={stylesInput.addListBtn} onPress={() => dispatch(setEnglish())} >
+                <Text>Set to English</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={stylesInput.addListBtn} onPress={() => dispatch(setBahasa())} >
+              <Text>Set to Bahasa</Text>
+            </TouchableOpacity>
+
         </View>
    
     )
